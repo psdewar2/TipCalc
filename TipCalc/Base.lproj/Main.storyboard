@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5AX-kd-mZw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cq2-Eo-fy2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDv-2V-8MD">
+                                <rect key="frame" x="20" y="130" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="24" y="51" width="87" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luY-du-NXO">
+                                <rect key="frame" x="302" y="228" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="523" y="149" width="53" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="302" y="260" width="53" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tii-Ns-qQ9">
+                                <rect key="frame" x="20" y="228" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="24" y="149" width="25" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="260" width="25" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wl-GL-RMi">
+                                <rect key="frame" x="20" y="328" width="70" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="oEl-tj-TJA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="437" width="70" height="32"/>
+                                </variation>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="AeJ-oU-JEz">
+                                <rect key="frame" x="43" y="384" width="290" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="43" y="556" width="290" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="lA0-40-ngG"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Duc-rh-xGd">
+                                <rect key="frame" x="203" y="127" width="152" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="207" y="127" width="369" height="30"/>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="261" y="127" width="115" height="30"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="207" y="127" width="169" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="265" y="127" width="90" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="ZtN-dF-0eY"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prh-kQ-0Tk">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="236" y="418" width="119" height="37"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="182" y="436" width="173" height="37"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czo-Ly-I5u">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="517" width="335" height="21"/>
+                                </variation>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKc-fQ-rjD">
+                                <rect key="frame" x="0.0" y="279" width="375" height="109"/>
+                                <color key="backgroundColor" red="0.24930359256587564" green="0.63569286616161613" blue="0.16353622467540022" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.80000000000000004"/>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="200" width="600" height="0.0"/>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="297" width="400" height="5"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="329" width="375" height="10"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="319" width="375" height="30"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="AeJ-oU-JEz" firstAttribute="centerX" secondItem="DKc-fQ-rjD" secondAttribute="centerX" id="4Ev-yc-fbm"/>
+                            <constraint firstItem="DKc-fQ-rjD" firstAttribute="top" secondItem="tii-Ns-qQ9" secondAttribute="bottom" constant="30" id="7a7-qG-uqF"/>
+                            <constraint firstItem="Duc-rh-xGd" firstAttribute="top" secondItem="5AX-kd-mZw" secondAttribute="bottom" constant="107" id="FtM-xB-7lK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Duc-rh-xGd" secondAttribute="trailing" constant="4" id="IRc-aR-BUX"/>
+                            <constraint firstItem="Duc-rh-xGd" firstAttribute="trailing" secondItem="luY-du-NXO" secondAttribute="trailing" id="KQF-P9-t7W"/>
+                            <constraint firstItem="luY-du-NXO" firstAttribute="baseline" secondItem="tii-Ns-qQ9" secondAttribute="firstBaseline" id="ML8-Xb-jCL"/>
+                            <constraint firstAttribute="trailing" secondItem="DKc-fQ-rjD" secondAttribute="trailing" id="U9W-UJ-khK"/>
+                            <constraint firstItem="Cq2-Eo-fy2" firstAttribute="top" secondItem="AeJ-oU-JEz" secondAttribute="bottom" constant="158" id="XlZ-FE-2fc"/>
+                            <constraint firstItem="DKc-fQ-rjD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zu3-5S-eg7"/>
+                            <constraint firstItem="eDv-2V-8MD" firstAttribute="leading" secondItem="tii-Ns-qQ9" secondAttribute="leading" id="dPB-vR-b6S"/>
+                            <constraint firstItem="0Wl-GL-RMi" firstAttribute="leading" secondItem="tii-Ns-qQ9" secondAttribute="leading" id="ex8-PK-PL7"/>
+                            <constraint firstItem="DKc-fQ-rjD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hbT-V9-3iJ"/>
+                            <constraint firstItem="eDv-2V-8MD" firstAttribute="baseline" secondItem="Duc-rh-xGd" secondAttribute="baseline" id="m2n-kd-2VB"/>
+                            <constraint firstItem="Duc-rh-xGd" firstAttribute="leading" secondItem="eDv-2V-8MD" secondAttribute="trailing" constant="96" id="mMy-qc-unE"/>
+                            <constraint firstItem="AeJ-oU-JEz" firstAttribute="top" secondItem="0Wl-GL-RMi" secondAttribute="bottom" constant="24" id="ndx-WB-roY"/>
+                            <constraint firstItem="AeJ-oU-JEz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="pCS-By-0Ja"/>
+                            <constraint firstItem="tii-Ns-qQ9" firstAttribute="baseline" secondItem="luY-du-NXO" secondAttribute="baseline" id="tKU-iX-Sk5"/>
+                            <constraint firstItem="eDv-2V-8MD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="tij-U6-b8G"/>
+                            <constraint firstItem="tii-Ns-qQ9" firstAttribute="top" secondItem="eDv-2V-8MD" secondAttribute="bottom" constant="77" id="uJe-OP-HvS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Prh-kQ-0Tk"/>
+                                <exclude reference="Czo-Ly-I5u"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Prh-kQ-0Tk"/>
+                                <include reference="Czo-Ly-I5u"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Y3A-NW-9oR" appends="YES" id="8AH-He-BQ9"/>
+                        </connections>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="billField" destination="Duc-rh-xGd" id="yMq-jG-jv9"/>
+                        <outlet property="slider" destination="AeJ-oU-JEz" id="H3v-kS-mzz"/>
+                        <outlet property="tipLabel" destination="luY-du-NXO" id="DNB-kc-1Z3"/>
+                        <outlet property="tipPercLabel" destination="Czo-Ly-I5u" id="gqf-dX-oWx"/>
+                        <outlet property="totalLabel" destination="Prh-kQ-0Tk" id="Ogg-Is-OQh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Y3A-NW-9oR">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="xJo-sb-xmF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="242.25" y="347.25"/>
+        </scene>
+    </scenes>
+</document>
