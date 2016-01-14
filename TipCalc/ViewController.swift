@@ -16,13 +16,20 @@ class ViewController: UIViewController {
     @IBOutlet var totalLabel: UILabel!
     @IBOutlet var slider: UISlider!
     @IBOutlet var tipPercLabel: UILabel!
+    @IBOutlet var peopleSegment: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        billField.attributedPlaceholder = NSAttributedString(string: "$0.00", attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
-        tipPercLabel.text = "Gratuity: 10%"
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        billField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,26 +38,44 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
+        var numPeople = [1,2,3,4]
+        
         let billAmount = NSString(string: billField.text!).doubleValue
-        let tipPercentage = NSString(string: tipPercLabel.text!).intValue
+        let tipPercentage = Int(slider.value)
         let tip = billAmount * Double(tipPercentage) / 100
-        let total = billAmount + tip
+        let total = (billAmount + tip) / Double(numPeople[peopleSegment.selectedSegmentIndex])
 
         //formats values to two decimal places
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+
+        tipLabel.text = tip.asLocaleCurrency()
+        totalLabel.text = total.asLocaleCurrency()
         tipPercLabel.text = String(format: "Gratuity: \(tipPercentage)%%")
     }
 
     @IBAction func onTap(sender: AnyObject) {
+        //let billAmount = NSString(string: billField.text!).doubleValue
+        //billField.text = "\(billAmount.asLocaleCurrency())"
         view.endEditing(true)
     }
     
     @IBAction func onValueChanged(sender: UISlider) {
         let currentValue = sender.value
+        print(currentValue)
         tipPercLabel.text = "\(currentValue)%"
         onEditingChanged(sender)
     }
-    
+    @IBAction func onIndexChanged(sender: UISegmentedControl) {
+        onEditingChanged(sender)
+    }
 }
+
+extension Double {
+    func asLocaleCurrency() -> String {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = NSLocale.currentLocale()
+        return formatter.stringFromNumber(self)!
+    }
+}
+
 
